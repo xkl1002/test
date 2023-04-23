@@ -27,7 +27,7 @@ public class CheckUserServlet extends HttpServlet {
         String password = request.getParameter("password");
         StudentService studentService = new StudentServiceImpl();
         try {
-            List<Student> students = studentService.searchAllByNameAndPassword("戴子韬", "2hRsykFpOz");
+            List<Student> students = studentService.searchAllByNameAndPassword(name, password);
             Student student = students.get(0);
             out.println("<h1 style= \"color: red; text-align: center; margin: 297px;\" >"+"登陆成功！"+"<br>"+"你的班级为"+student.getSclass()+"</h1>");
         }
@@ -37,8 +37,6 @@ public class CheckUserServlet extends HttpServlet {
         }
 
     }
-
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }

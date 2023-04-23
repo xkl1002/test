@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/login.css" />
+    <link rel="icon" href="favicon.ico">
     <title>登录</title>
 </head>
 <body>
@@ -31,8 +32,8 @@
             <input type="reset" value="重置" />
         </div>
         <div style="margin: 50px;">
-            <div class="five"><a href="developingpage.jsp">其他方式登录</a></div>
-            <div class="four"><a href="developingpage.jsp">忘记密码?</a></div>
+            <div class="five"><a href="pages/developingpage.jsp">其他方式登录</a></div>
+            <div class="four"><a href="pages/developingpage.jsp">忘记密码?</a></div>
         </div>
         </form>
     </div>

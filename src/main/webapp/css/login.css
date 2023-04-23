@@ -1,0 +1,118 @@
+* {
+    margin: 0px;
+    padding: 3px;
+}
+body {
+    background-image: url("https://www.helloimg.com/images/2023/03/24/o1kxaD.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.text-gradient {
+    display: inline-block;
+    font-family: "微软雅黑";
+    font-size: 2em;
+    position: relative;
+}
+
+.text-gradient[data-text]::after {
+    content: attr(data-text);
+    color: rgb(14, 229, 211);
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    -webkit-mask-image: -webkit-gradient(
+            linear,
+            0 0,
+            0 bottom,
+            from(#cb1db7),
+            to(rgba(241, 0, 213, 0))
+    );
+}
+.two {
+    border-radius: 1em;
+    opacity: 0.85;
+    text-align: center;
+    margin: 40px auto;
+    background-color: #dbdde4;
+    height: 550px;
+    width: 800px;
+}
+.two div {
+    margin: 20px 50px;
+}
+.two span {
+    background: linear-gradient(to right, red, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+span {
+    font-size: 20px;
+}
+.one input {
+    border: 0px;
+    padding-left: 5px;
+    font-size: 18px;
+    color: #000000;
+    border-radius: 8px;
+    margin: 0px;
+    width: 296px;
+    height: 40px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #0095ff;
+}
+.one input:hover {
+    box-shadow: 0px 0px 5px 2px #3ea9d7;
+}
+.one input:active {
+    border-color: crimson;
+}
+.three input {
+    font-weight: 600;
+    border-width: 0px;
+    cursor: pointer;
+    border-color: #0095ff;
+    border-radius: 5px;
+    height: 43px;
+    width: 132px;
+    background-color: #1182d2;
+    font-size: 15px;
+    color: white;
+}
+.three input:hover {
+    background-color: #69afe0;
+}
+.four a {
+    margin: -50px 20px;
+    float: right;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: crimson;
+}
+.five a {
+    margin: -18px 20px;
+    float: left;
+}
+.six {
+    float: right;
+}
+#first {
+    border-radius: 5px;
+    height: 14px;
+    width: 30px;
+}
+.seven {
+    margin: 0px;
+    text-align: left;
+    font-size: 14px;
+}
+.two.one.second {
+    margin: 0px;
+}
+.eight {
+    margin: 0px 0px;
+    padding: 3px;
+}

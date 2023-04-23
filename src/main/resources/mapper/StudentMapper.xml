@@ -13,8 +13,44 @@
             <result property="major" column="major" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        id,name,sno,
-        password,sclass,major
-    </sql>
+    <select id="searchAll" resultMap="BaseResultMap">
+        select
+        *
+        from student
+        ORDER BY id limit #{from},#{pagesize}
+    </select>
+    <select id="searchAllByNameAndPassword" resultMap="BaseResultMap">
+        select
+        *
+        from student
+        where
+        name = #{name,jdbcType=VARCHAR}
+        AND password = #{password,jdbcType=VARCHAR}
+    </select>
+    <select id="selectAllByNameOrMajorOrSnoIsNotNull" resultType="ml.lkxe.sms2.entity.Student">
+        select  * from student
+        <where>
+            <choose>
+            <when test="name!=null and name!=''">
+                name=#{name}
+            </when>
+            <when test="major!=null and major!=''">
+                and major=#{major}
+            </when>
+        <otherwise>
+            and sno is not null
+        </otherwise>
+            </choose>
+        </where>
+    </select>
+    <select id="selectByIdLessThanFive" resultMap="BaseResultMap" parameterType="List">
+        select
+        *
+        from student
+        where id in
+        <foreach collection="list" index="index" item="id" open="(" separator="," close=")">
+           #{id}
+        </foreach>
+    </select>
+
 </mapper>
